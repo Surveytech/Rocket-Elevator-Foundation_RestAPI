@@ -19,6 +19,6 @@ namespace BuildingApi.Models
         public string Filename { get; set; }
         public long? customer_id { get; set; }
 
-        public virtual Customers Customers { get; set; }
+        public virtual Customers customers { get; set; }
     }
 }
