@@ -34,7 +34,7 @@ namespace BuildingApi.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=MaximeAuger_mysql;uid=dana;password=12345");
+                optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=MaximeAuger_mysql;uid=surveytech;password=2304godZ");
             }
         }
 
@@ -105,7 +105,7 @@ namespace BuildingApi.Models
                     .HasMaxLength(255);
 
                 entity.HasOne(d => d.Building)
-                    .WithMany(p => p.Addresses)
+                    .WithMany(p => p.addresses)
                     .HasForeignKey(d => d.BuildingId)
                     .HasConstraintName("fk_rails_a9ab2347cc");
 
@@ -265,7 +265,7 @@ namespace BuildingApi.Models
                     .HasColumnName("tech_contact_phone")
                     .HasMaxLength(255);
 
-                entity.HasOne(d => d.Address)
+                entity.HasOne(d => d.address)
                     .WithMany(p => p.Buildings)
                     .HasForeignKey(d => d.AddressId)
                     .HasConstraintName("fk_rails_6dc7a885ab");
@@ -484,8 +484,8 @@ namespace BuildingApi.Models
             {
                 entity.ToTable("leads");
 
-                entity.HasIndex(e => e.customers_id)
-                    .HasName("index_leads_on_customers_id");
+                entity.HasIndex(e => e.customer_id)
+                    .HasName("index_leads_on_customer_id");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
@@ -495,8 +495,8 @@ namespace BuildingApi.Models
                     .HasColumnName("company_name")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.customers_id)
-                    .HasColumnName("customers_id")
+                entity.Property(e => e.customer_id)
+                    .HasColumnName("customer_id")
                     .HasColumnType("bigint(20)");
 
                 entity.Property(e => e.Department)
@@ -533,9 +533,9 @@ namespace BuildingApi.Models
                     .HasColumnName("project_name")
                     .HasMaxLength(255);
 
-                entity.HasOne(d => d.Customers)
+                entity.HasOne(d => d.customers)
                     .WithMany(p => p.Leads)
-                    .HasForeignKey(d => d.customers_id)
+                    .HasForeignKey(d => d.customer_id)
                     .HasConstraintName("fk_rails_f6c5b6922a");
             });
 
