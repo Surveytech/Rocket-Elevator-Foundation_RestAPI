@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj": {}
+    "/home/surveytech/week8/Rocket-Elevators_RestApi/BuildingApi.csproj": {}
   },
   "projects": {
-    "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj": {
+    "/home/surveytech/week8/Rocket-Elevators_RestApi/BuildingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj",
+        "projectUniqueName": "/home/surveytech/week8/Rocket-Elevators_RestApi/BuildingApi.csproj",
         "projectName": "BuildingApi",
-        "projectPath": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj",
+        "projectPath": "/home/surveytech/week8/Rocket-Elevators_RestApi/BuildingApi.csproj",
         "packagesPath": "/home/surveytech/.nuget/packages/",
-        "outputPath": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/obj/",
+        "outputPath": "/home/surveytech/week8/Rocket-Elevators_RestApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/surveytech/.nuget/NuGet/NuGet.Config"

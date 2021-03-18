@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m6ze+x7cwAgH/TL9aK11Lu6md25B+Rvj7OCxzLUp+1kuHMs+zQfUkaOP1MOwie8xz63dPgnXLIjzPwhO+lRIow==",
+  "dgSpecHash": "AjJiOmqzIqkZ1/5G84BNjndAbk8USHOOgOcXx89W1/wYJCQCo4hToD0e6kZjKalBnRgsVjqOXV/0ZscGK1ZGiQ==",
   "success": true,
-  "projectFilePath": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj",
+  "projectFilePath": "/home/surveytech/week8/Rocket-Elevators_RestApi/BuildingApi.csproj",
   "expectedPackageFiles": [
     "/home/surveytech/.nuget/packages/bouncycastle.netcore/1.8.5/bouncycastle.netcore.1.8.5.nupkg.sha512",
     "/home/surveytech/.nuget/packages/google.protobuf/3.11.4/google.protobuf.3.11.4.nupkg.sha512",
