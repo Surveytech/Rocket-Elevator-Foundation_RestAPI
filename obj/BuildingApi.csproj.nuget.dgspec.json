@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\d_duq\\OneDrive\\Bureau\\making a rest api\\buildingapi\\BuildingApi.csproj": {}
+    "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\d_duq\\OneDrive\\Bureau\\making a rest api\\buildingapi\\BuildingApi.csproj": {
+    "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\d_duq\\OneDrive\\Bureau\\making a rest api\\buildingapi\\BuildingApi.csproj",
+        "projectUniqueName": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj",
         "projectName": "BuildingApi",
-        "projectPath": "C:\\Users\\d_duq\\OneDrive\\Bureau\\making a rest api\\buildingapi\\BuildingApi.csproj",
-        "packagesPath": "C:\\Users\\d_duq\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\d_duq\\OneDrive\\Bureau\\making a rest api\\buildingapi\\obj\\",
+        "projectPath": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/BuildingApi.csproj",
+        "packagesPath": "/home/surveytech/.nuget/packages/",
+        "outputPath": "/home/surveytech/week8/Rocket-Elevators_Rest-Api_main/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\d_duq\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/surveytech/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

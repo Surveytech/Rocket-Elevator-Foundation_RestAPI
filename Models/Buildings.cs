@@ -7,7 +7,7 @@ namespace BuildingApi.Models
     {
         public Buildings()
         {
-            Addresses = new HashSet<Addresses>();
+            addresses = new HashSet<Addresses>();
             Batteries = new HashSet<Batteries>();
             BuildingDetails = new HashSet<BuildingDetails>();
         }
@@ -22,9 +22,9 @@ namespace BuildingApi.Models
         public long? CustomerId { get; set; }
         public long? AddressId { get; set; }
 
-        public virtual Addresses Address { get; set; }
+        public virtual Addresses address { get; set; }
         public virtual Customers Customer { get; set; }
-        public virtual ICollection<Addresses> Addresses { get; set; }
+        public virtual ICollection<Addresses> addresses { get; set; }
         public virtual ICollection<Batteries> Batteries { get; set; }
         public virtual ICollection<BuildingDetails> BuildingDetails { get; set; }
     }
