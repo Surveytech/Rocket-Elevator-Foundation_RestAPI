@@ -16,9 +16,9 @@ namespace BuildingApi.Controllers
     public class BuildingController : ControllerBase
 
     {
-        private readonly MaximeAuger_mysqlContext _context;
+        private readonly CSL_mysqlContext _context;
 
-        public BuildingController(MaximeAuger_mysqlContext context)
+        public BuildingController(CSL_mysqlContext context)
         {
             _context = context;
         }

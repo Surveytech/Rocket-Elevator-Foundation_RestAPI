@@ -13,9 +13,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class columnsController : ControllerBase
     {
-        private readonly MaximeAuger_mysqlContext _context;
+        private readonly CSL_mysqlContext _context;
 
-        public columnsController(MaximeAuger_mysqlContext context)
+        public columnsController(CSL_mysqlContext context)
         {
             _context = context;
         }

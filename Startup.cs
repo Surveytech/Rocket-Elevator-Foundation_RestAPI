@@ -30,7 +30,7 @@ namespace buildingapi
         {
             
 
-            services.AddDbContext<MaximeAuger_mysqlContext>(options =>
+            services.AddDbContext<CSL_mysqlContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             

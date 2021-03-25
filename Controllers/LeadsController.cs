@@ -13,9 +13,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class LeadsController : ControllerBase
     {
-        private readonly MaximeAuger_mysqlContext _context;
+        private readonly CSL_mysqlContext _context;
 
-        public LeadsController(MaximeAuger_mysqlContext context)
+        public LeadsController(CSL_mysqlContext context)
         {
             _context = context;
         }

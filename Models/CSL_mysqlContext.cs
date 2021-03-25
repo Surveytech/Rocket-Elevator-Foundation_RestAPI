@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BuildingApi.Models
 {
-    public partial class MaximeAuger_mysqlContext : DbContext
+    public partial class CSL_mysqlContext : DbContext
     {
-        public MaximeAuger_mysqlContext()
+        public CSL_mysqlContext()
         {
         }
 
-        public MaximeAuger_mysqlContext(DbContextOptions<MaximeAuger_mysqlContext> options)
+        public CSL_mysqlContext(DbContextOptions<CSL_mysqlContext> options)
             : base(options)
         {
         }
@@ -33,8 +33,8 @@ namespace BuildingApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=MaximeAuger_mysql;uid=surveytech;password=2304godZ");
-                optionsBuilder.UseMySQL("Server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;Database=csl;uid=codeboxx;password=Codeboxx1!");
+                optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=csl;uid=surveytech;password=2304godZ");
+                // optionsBuilder.UseMySQL("Server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;Database=csl;uid=codeboxx;password=Codeboxx1!");
             }
         }
 
