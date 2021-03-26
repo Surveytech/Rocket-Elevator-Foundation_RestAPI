@@ -34,8 +34,8 @@ namespace BuildingApi.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=csl;uid=surveytech;password=2304godZ");
-                // optionsBuilder.UseMySQL("Server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;Database=csl;uid=codeboxx;password=Codeboxx1!");
+                // optionsBuilder.UseMySQL("Server=localhost;port=3306;Database=csl;uid=surveytech;password=2304godZ");
+                optionsBuilder.UseMySQL("Server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;Database=csl;uid=codeboxx;password=Codeboxx1!");
             }
         }
 
