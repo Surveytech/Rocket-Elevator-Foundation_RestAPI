@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using BuildingApi.Models;
+using BuildingApi.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace buildingapi
@@ -30,7 +30,7 @@ namespace buildingapi
         {
             
 
-            services.AddDbContext<CSL_mysqlContext>(options =>
+            services.AddDbContext<cslContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BuildingApi.Models
+namespace BuildingApi.Model
 {
     public partial class Customers
     {
@@ -9,6 +9,7 @@ namespace BuildingApi.Models
         {
             Addresses = new HashSet<Addresses>();
             Buildings = new HashSet<Buildings>();
+            Interventions = new HashSet<Interventions>();
             Leads = new HashSet<Leads>();
         }
 
@@ -24,11 +25,14 @@ namespace BuildingApi.Models
         public string TechManagerServiceEmail { get; set; }
         public long? UserId { get; set; }
         public long? AddressId { get; set; }
+        public long? LeadId { get; set; }
 
         public virtual Addresses Address { get; set; }
+        public virtual Leads Lead { get; set; }
         public virtual Users User { get; set; }
         public virtual ICollection<Addresses> Addresses { get; set; }
         public virtual ICollection<Buildings> Buildings { get; set; }
+        public virtual ICollection<Interventions> Interventions { get; set; }
         public virtual ICollection<Leads> Leads { get; set; }
     }
 }

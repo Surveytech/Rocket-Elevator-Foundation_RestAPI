@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using BuildingApi.Models;
+using BuildingApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -16,9 +16,9 @@ namespace BuildingApi.Controllers
     public class BuildingController : ControllerBase
 
     {
-        private readonly CSL_mysqlContext _context;
+        private readonly cslContext _context;
 
-        public BuildingController(CSL_mysqlContext context)
+        public BuildingController(cslContext context)
         {
             _context = context;
         }
@@ -31,7 +31,7 @@ namespace BuildingApi.Controllers
         }
         
         // Action that gives the list of buildings
-        // GET: api/buildings/listofbuildings
+        // GET: api/building/listofbuildings
         [HttpGet("listofbuildings")]
         public async Task<ActionResult<IEnumerable<Buildings>>> GetbuildingList()
         {

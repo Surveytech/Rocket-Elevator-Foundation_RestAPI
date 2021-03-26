@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BuildingApi.Models
+namespace BuildingApi.Model
 {
     public partial class Columns
     {
         public Columns()
         {
             Elevators = new HashSet<Elevators>();
+            Interventions = new HashSet<Interventions>();
         }
 
         public long Id { get; set; }
@@ -20,5 +21,6 @@ namespace BuildingApi.Models
 
         public virtual Batteries Battery { get; set; }
         public virtual ICollection<Elevators> Elevators { get; set; }
+        public virtual ICollection<Interventions> Interventions { get; set; }
     }
 }

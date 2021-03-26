@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BuildingApi.Models
+namespace BuildingApi.Model
 {
     public partial class Leads
     {
+        public Leads()
+        {
+            Customers = new HashSet<Customers>();
+        }
+
         public long Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -17,8 +22,9 @@ namespace BuildingApi.Models
         public byte[] FileAttachment { get; set; }
         public DateTime created_at { get; set; }
         public string Filename { get; set; }
-        public long? customer_id { get; set; }
+        public long? CustomerId { get; set; }
 
-        public virtual Customers customers { get; set; }
+        public virtual Customers Customer { get; set; }
+        public virtual ICollection<Customers> Customers { get; set; }
     }
 }

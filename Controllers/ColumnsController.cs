@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BuildingApi.Models;
+using BuildingApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,9 +13,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class columnsController : ControllerBase
     {
-        private readonly CSL_mysqlContext _context;
+        private readonly cslContext _context;
 
-        public columnsController(CSL_mysqlContext context)
+        public columnsController(cslContext context)
         {
             _context = context;
         }

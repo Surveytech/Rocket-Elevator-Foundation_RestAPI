@@ -2,15 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BuildingApi.Models
+namespace BuildingApi.Model
 {
-    public partial class CSL_mysqlContext : DbContext
+    public partial class cslContext : DbContext
     {
-        public CSL_mysqlContext()
+        public cslContext()
         {
         }
 
-        public CSL_mysqlContext(DbContextOptions<CSL_mysqlContext> options)
+        public cslContext(DbContextOptions<cslContext> options)
             : base(options)
         {
         }
@@ -24,6 +24,7 @@ namespace BuildingApi.Models
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Elevators> Elevators { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
+        public virtual DbSet<Interventions> Interventions { get; set; }
         public virtual DbSet<Leads> Leads { get; set; }
         public virtual DbSet<Quotes> Quotes { get; set; }
         public virtual DbSet<SchemaMigrations> SchemaMigrations { get; set; }
@@ -105,7 +106,7 @@ namespace BuildingApi.Models
                     .HasMaxLength(255);
 
                 entity.HasOne(d => d.Building)
-                    .WithMany(p => p.addresses)
+                    .WithMany(p => p.Addresses)
                     .HasForeignKey(d => d.BuildingId)
                     .HasConstraintName("fk_rails_a9ab2347cc");
 
@@ -265,7 +266,7 @@ namespace BuildingApi.Models
                     .HasColumnName("tech_contact_phone")
                     .HasMaxLength(255);
 
-                entity.HasOne(d => d.address)
+                entity.HasOne(d => d.Address)
                     .WithMany(p => p.Buildings)
                     .HasForeignKey(d => d.AddressId)
                     .HasConstraintName("fk_rails_6dc7a885ab");
@@ -322,6 +323,9 @@ namespace BuildingApi.Models
                 entity.HasIndex(e => e.AddressId)
                     .HasName("index_customers_on_address_id");
 
+                entity.HasIndex(e => e.LeadId)
+                    .HasName("index_customers_on_lead_id");
+
                 entity.HasIndex(e => e.UserId)
                     .HasName("index_customers_on_user_id");
 
@@ -357,6 +361,10 @@ namespace BuildingApi.Models
                     .HasColumnName("date_create")
                     .HasColumnType("date");
 
+                entity.Property(e => e.LeadId)
+                    .HasColumnName("lead_id")
+                    .HasColumnType("bigint(20)");
+
                 entity.Property(e => e.TechAuthorityServiceFullName)
                     .HasColumnName("tech_authority_service_full_name")
                     .HasMaxLength(255);
@@ -377,6 +385,11 @@ namespace BuildingApi.Models
                     .WithMany(p => p.Customers)
                     .HasForeignKey(d => d.AddressId)
                     .HasConstraintName("fk_rails_3f9404ba26");
+
+                entity.HasOne(d => d.Lead)
+                    .WithMany(p => p.Customers)
+                    .HasForeignKey(d => d.LeadId)
+                    .HasConstraintName("fk_rails_a94a9623e0");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Customers)
@@ -480,11 +493,118 @@ namespace BuildingApi.Models
                     .HasConstraintName("fk_rails_dcfd3d4fc3");
             });
 
+            modelBuilder.Entity<Interventions>(entity =>
+            {
+                entity.ToTable("interventions");
+
+                entity.HasIndex(e => e.BatteryId)
+                    .HasName("index_interventions_on_battery_id");
+
+                entity.HasIndex(e => e.BuildingId)
+                    .HasName("index_interventions_on_building_id");
+
+                entity.HasIndex(e => e.ColumnId)
+                    .HasName("index_interventions_on_column_id");
+
+                entity.HasIndex(e => e.CustomerId)
+                    .HasName("index_interventions_on_customer_id");
+
+                entity.HasIndex(e => e.ElevatorId)
+                    .HasName("index_interventions_on_elevator_id");
+
+                entity.HasIndex(e => e.EmployeeId)
+                    .HasName("index_interventions_on_employee_id");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.AuthorId)
+                    .HasColumnName("author_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BatteryId)
+                    .HasColumnName("battery_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.BuildingId)
+                    .HasColumnName("building_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.ColumnId)
+                    .HasColumnName("column_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.CustomerId)
+                    .HasColumnName("customer_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.ElevatorId)
+                    .HasColumnName("elevator_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.EmployeeId)
+                    .HasColumnName("employee_id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.InterventionStart)
+                    .HasColumnName("intervention_start")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.InterventionEnd)
+                    .HasColumnName("intervention_end")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Report)
+                    .HasColumnName("report")
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Result)
+                    .HasColumnName("result")
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasMaxLength(255);
+
+                entity.HasOne(d => d.Battery)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.BatteryId)
+                    .HasConstraintName("fk_rails_268aede6d6");
+
+                entity.HasOne(d => d.Building)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.BuildingId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_rails_911b4ef939");
+
+                entity.HasOne(d => d.Column)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.ColumnId)
+                    .HasConstraintName("fk_rails_d05fb241b3");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_rails_4242c0f569");
+
+                entity.HasOne(d => d.Elevator)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.ElevatorId)
+                    .HasConstraintName("fk_rails_11b5a4bd36");
+
+                entity.HasOne(d => d.Employee)
+                    .WithMany(p => p.Interventions)
+                    .HasForeignKey(d => d.EmployeeId)
+                    .HasConstraintName("fk_rails_2e0d31b7ad");
+            });
+
             modelBuilder.Entity<Leads>(entity =>
             {
                 entity.ToTable("leads");
 
-                entity.HasIndex(e => e.customer_id)
+                entity.HasIndex(e => e.CustomerId)
                     .HasName("index_leads_on_customer_id");
 
                 entity.Property(e => e.Id)
@@ -495,7 +615,7 @@ namespace BuildingApi.Models
                     .HasColumnName("company_name")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.customer_id)
+                entity.Property(e => e.CustomerId)
                     .HasColumnName("customer_id")
                     .HasColumnType("bigint(20)");
 
@@ -533,10 +653,10 @@ namespace BuildingApi.Models
                     .HasColumnName("project_name")
                     .HasMaxLength(255);
 
-                entity.HasOne(d => d.customers)
+                entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Leads)
-                    .HasForeignKey(d => d.customer_id)
-                    .HasConstraintName("fk_rails_f6c5b6922a");
+                    .HasForeignKey(d => d.CustomerId)
+                    .HasConstraintName("fk_rails_da25e077a0");
             });
 
             modelBuilder.Entity<Quotes>(entity =>
