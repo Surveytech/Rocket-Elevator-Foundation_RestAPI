@@ -13,6 +13,8 @@ namespace BuildingApi.Model
         public long? ColumnId { get; set; }
         public long? ElevatorId { get; set; }
         public long? EmployeeId { get; set; }
+        public DateTime? InterventionStart { get; set; }
+        public DateTime? InterventionEnd { get; set; }
         public string Result { get; set; }
         public string Report { get; set; }
         public string Status { get; set; }

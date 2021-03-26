@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BuildingApi.Models;
+using BuildingApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -42,37 +42,51 @@ namespace BuildingApi.Controllers
 
             return inter;
         }
-
-       
-        //retrieval of a column status
-        [HttpGet("{id}/status")]
-        public async Task<ActionResult<string>> GetcolumnStatus(long id)
+        
+        //Action that gives the list of inactive interventions
+        //GET : api/interventions/getpendinginterventions
+        [HttpGet("getpendinginterventions")]
+        public async Task<ActionResult<IEnumerable<Interventions>>> GetPendingInterventions()
         {
-            var columns = await _context.Columns.FindAsync(id);
+            var pending = await (from inter in _context.Interventions
+                where inter.InterventionStart == null && inter.Status == "Pending"
+                select inter ).ToListAsync();
+                
 
-            if (columns == null)
+            if (pending == null || !pending.Any())
             {
                 return NotFound();
             }
 
-            return columns.Status;
-            
+            return pending;
         }
+       
+        // //retrieval of a column status
+        // [HttpGet("{id}/status")]
+        // public async Task<ActionResult<string>> GetcolumnStatus(long id)
+        // {
+        //     var columns = await _context.Columns.FindAsync(id);
 
-        
-        //function called when updating a column status
-        // PUT: using the the id to identify the column and the string which will be the new status        
-        [HttpPut("{id}/updatestatus")]
-        public async Task<IActionResult> PutmodifyColumnStatus(long id, string Status)
+        //     if (columns == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     return columns.Status;
+            
+        // }
+
+        //function called when updating a intervention status to InProgress and start date
+        // PUT: using the the id to identify the intervention and the string which will be the new status        
+        [HttpPut("{id}/updatestatusdatestart")]
+        public async Task<IActionResult> PutmodifyInterventionStatusWithDateStart(long id)
         {
-            if (Status == null)
-            {
-                return BadRequest();
-            }
+            var intervention = await _context.Interventions.FindAsync(id);
 
-            var column = await _context.Columns.FindAsync(id);
+            intervention.Status = "InProgress";
+            DateTime starttime = DateTime.Now;
+            intervention.InterventionStart = starttime;
 
-            column.Status = Status;
 
             try
             {
@@ -80,7 +94,37 @@ namespace BuildingApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!columnsExists(id))
+                if (!interventionsExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+       //function called when updating a intervention status to completed and a end date
+        // PUT: using the the id to identify the intervention and the string which will be the new status        
+        [HttpPut("{id}/updatestatusdateend")]
+        public async Task<IActionResult> PutmodifyInteventionStatusWithDateEnd(long id)
+        {
+            var intervention = await _context.Interventions.FindAsync(id);
+
+            intervention.Status = "Completed";
+            DateTime endtime = DateTime.Now;
+            intervention.InterventionEnd = endtime;
+
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!interventionsExists(id))
                 {
                     return NotFound();
                 }
@@ -93,9 +137,11 @@ namespace BuildingApi.Controllers
             return NoContent();
         }
 
-        private bool columnsExists(long id)
+
+
+        private bool interventionsExists(long id)
         {
-            return _context.Columns.Any(e => e.Id == id);
+            return _context.Interventions.Any(e => e.Id == id);
         }
-    }
+     }
 }

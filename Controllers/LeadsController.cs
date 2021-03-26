@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using BuildingApi.Models;
+using BuildingApi.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -50,7 +50,7 @@ namespace BuildingApi.Controllers
         [HttpGet("{leadsNoCustomer}")]
         public async Task<ActionResult<List<Leads>>> GetleadsCustomers()
         {
-            var leads = await _context.Leads.Where(b => b.customer_id == null).ToListAsync();
+            var leads = await _context.Leads.Where(b => b.CustomerId == null).ToListAsync();
             var newLeads = leads.Where(e => e.created_at >= DateTime.Today.AddDays(-30)).ToList();
 
             if (newLeads == null)
