@@ -13,9 +13,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class LeadsController : ControllerBase
     {
-        private readonly CSL_mysqlContext _context;
+        private readonly cslContext _context;
 
-        public LeadsController(CSL_mysqlContext context)
+        public LeadsController(cslContext context)
         {
             _context = context;
         }
@@ -31,18 +31,18 @@ namespace BuildingApi.Controllers
 
         // Action that recuperates a given Leads
         // GET: api/leads/id
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<Leads>> GetleadsId(long Id)
-        // {
-        //     var leads = await _context.Leads.FindAsync(Id);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Leads>> GetleadsId(long Id)
+        {
+            var leads = await _context.Leads.FindAsync(Id);
 
-        //     if (leads == null)
-        //     {
-        //         return NotFound();
-        //     }
+            if (leads == null)
+            {
+                return NotFound();
+            }
 
-        //     return leads;
-        // }
+            return leads;
+        }
 
         
         // Action that recuperates a given Leads

@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BuildingApi.Model
+namespace BuildingApi.Models
 {
     public partial class Elevators
     {
-        public Elevators()
-        {
-            Interventions = new HashSet<Interventions>();
-        }
-
         public long Id { get; set; }
         public string SerialNumber { get; set; }
         public string Model { get; set; }
@@ -23,6 +18,5 @@ namespace BuildingApi.Model
         public long? ColumnId { get; set; }
 
         public virtual Columns Column { get; set; }
-        public virtual ICollection<Interventions> Interventions { get; set; }
     }
 }

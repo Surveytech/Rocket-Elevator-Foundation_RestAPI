@@ -11,36 +11,36 @@ namespace BuildingApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class columnsController : ControllerBase
+    public class interventionsController : ControllerBase
     {
         private readonly cslContext _context;
 
-        public columnsController(cslContext context)
+        public interventionsController(cslContext context)
         {
             _context = context;
         }
 
-        //Action that gives the list of all columns
-        // GET: api/columns
+        //Action that gives the list of all interventions
+        // GET: api/interventions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Columns>>> Getcolumns()
+        public async Task<ActionResult<IEnumerable<Interventions>>> Getinterventions()
         {
-            return await _context.Columns.ToListAsync();
+            return await _context.Interventions.ToListAsync();
         }
 
-         // Action that recuperates a given column 
-        // GET: api/columns/id
+         // Action that recuperates a given interventions
+        // GET: api/interventions/id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Columns>> Getcolumns(long id)
+        public async Task<ActionResult<Interventions>> GetInterventionsById(long id)
         {
-            var column = await _context.Columns.FindAsync(id);
+            var inter = await _context.Interventions.FindAsync(id);
 
-            if (column == null)
+            if (inter == null)
             {
                 return NotFound();
             }
 
-            return column;
+            return inter;
         }
 
        

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BuildingApi.Model
+namespace BuildingApi.Models
 {
     public partial class BuildingDetails
     {

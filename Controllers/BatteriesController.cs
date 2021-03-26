@@ -14,9 +14,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class BatteriesController : ControllerBase
     {
-        private readonly CSL_mysqlContext _context;
+        private readonly cslContext _context;
 
-        public BatteriesController(CSL_mysqlContext context)
+        public BatteriesController(cslContext context)
         {
             _context = context;
         }

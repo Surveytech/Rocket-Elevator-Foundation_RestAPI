@@ -13,9 +13,9 @@ namespace BuildingApi.Controllers
     [Route("[controller]")]
     public class elevatorsController : ControllerBase
     {
-        private readonly CSL_mysqlContext _context;
+        private readonly cslContext _context;
 
-        public elevatorsController(CSL_mysqlContext context)
+        public elevatorsController(cslContext context)
         {
             _context = context;
         }

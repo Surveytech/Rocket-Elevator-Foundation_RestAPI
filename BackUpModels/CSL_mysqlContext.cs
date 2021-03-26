@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BuildingApi.Models
 {
-    public partial class CSL_mysqlContext : DbContext
+    public partial class cslContext : DbContext
     {
-        public CSL_mysqlContext()
+        public cslContext()
         {
         }
 
-        public CSL_mysqlContext(DbContextOptions<CSL_mysqlContext> options)
+        public cslContext(DbContextOptions<cslContext> options)
             : base(options)
         {
         }
