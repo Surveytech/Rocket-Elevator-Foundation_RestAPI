@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "29d39a90-9132-463f-b119-157092c88254",
+		"name": "team4week8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieving all the batteries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Batteries",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Batteries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a battery by its id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Batteries/22",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Batteries",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a specific battery status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Batteries/22/status",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Batteries",
+						"22",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a specific battery status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Batteries/22/updatestatus?status=Online",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Batteries",
+						"22",
+						"updatestatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Online"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving all the buildings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Building",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Building"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a list of building with elevator or column or battery that need intervention",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Building/listofbuildings",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Building",
+						"listofbuildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a specific Column status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Columns/22/status",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Columns",
+						"22",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a specific column status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Columns/22/updatestatus?status=Offline",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Columns",
+						"22",
+						"updatestatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Offline"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a specific elevator status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Elevators/22/status",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Elevators",
+						"22",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a specific elevator status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Elevators/22/updatestatus?status=Online",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Elevators",
+						"22",
+						"updatestatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Online"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving inactive elevators",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Elevators/inactiveelevators",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Elevators",
+						"inactiveelevators"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieving a list of Leads created in the last 30 days who have not yet become customers.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://codeboxxteam4week8.azurewebsites.net/Leads/leadsNoCustomer",
+					"protocol": "https",
+					"host": [
+						"codeboxxteam4week8",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"Leads",
+						"leadsNoCustomer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,5 +1,5 @@
 {
     "maven.view": "hierarchical",
-    "appService.defaultWebAppToDeploy": "/subscriptions/269655fd-b111-4a8c-9c34-32df8140c32d/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/Team4Week8",
+    "appService.defaultWebAppToDeploy": "/subscriptions/269655fd-b111-4a8c-9c34-32df8140c32d/resourceGroups/Csl-RestApiWeek-9/providers/Microsoft.Web/sites/Csl-RestApiWeek-9",
     "appService.deploySubpath": "publish"
 }

@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "425754bc-47a6-4d39-b0bd-8dd482f47bc7",
+		"name": "CSL Week #9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieving All interventions with a Pending status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://csl-restapiweek-9.azurewebsites.net/interventions/getpendinginterventions",
+					"protocol": "https",
+					"host": [
+						"csl-restapiweek-9",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"interventions",
+						"getpendinginterventions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://csl-restapiweek-9.azurewebsites.net/interventions/5/updatestatusdatestart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://csl-restapiweek-9.azurewebsites.net/interventions/5/updatestatusdatestart",
+					"protocol": "https",
+					"host": [
+						"csl-restapiweek-9",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"interventions",
+						"5",
+						"updatestatusdatestart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://csl-restapiweek-9.azurewebsites.net/interventions/5/updatestatusdateend",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://csl-restapiweek-9.azurewebsites.net/interventions/5/updatestatusdateend",
+					"protocol": "https",
+					"host": [
+						"csl-restapiweek-9",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"interventions",
+						"5",
+						"updatestatusdateend"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
