@@ -109,6 +109,18 @@ namespace BuildingApi.Controllers
 
             return NoContent();
         }
+        [HttpGet("columnId/{columnId}")]
+        public async Task<ActionResult<IEnumerable<Elevators>>> GetelevatorsBycolumnId(long columnId)
+        {
+            var elevators = await _context.Elevators.Where(c => c.ColumnId == columnId).ToListAsync();
+
+            if (elevators == null)
+            {
+                return NotFound();
+            }
+
+            return elevators;
+        }
 
         private bool elevatorsExists(long id)
         {
