@@ -24,30 +24,30 @@ namespace BuildingApi.Controllers
         //Action that gives the list of all customer
         // GET: api/customer
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customers>>> Getcustomers()
+        public async Task<ActionResult<IEnumerable<Customers>>> GetCustomer()
         {
             return await _context.Customers.ToListAsync();
         }
 
          // Action that recuperates a given customers
         // GET: api/customers/id
-        [HttpGet("{email}")]
-        public async Task<ActionResult<List<Customers>>> GetcustomersById(string email)
+        [HttpGet("{Email}")]
+        public async Task<ActionResult<List<Customers>>> GetCustomerbyEmail(string Email)
         {
-            var customer = await _context.Customers.Where(c => c.CpyContactEmail == email).ToListAsync();
+            var customer = await _context.Customers.Where(c => c.CpyContactEmail == Email).ToListAsync();
 
-            if (customer == null)
+            if (!CustomerExists(Email))
             {
-                return NotFound();
+                return BadRequest();
             }
 
             return customer;
         }
       
 
-        private bool customersExists(long id)
+        private bool CustomerExists(string Email)
         {
-            return _context.Customers.Any(e => e.Id == id);
+            return _context.Customers.Any(c => c.CpyContactEmail == Email);
         }
      }
 }

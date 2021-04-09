@@ -1,8 +1,11 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/surveytech/.dotnet/store/|arch|/|tfm|",
-      "/home/surveytech/.nuget/packages"
+      "C:\\Users\\teamb\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\teamb\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }
