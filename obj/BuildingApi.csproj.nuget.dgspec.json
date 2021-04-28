@@ -1,34 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "\\\\wsl$\\Ubuntu-18.04\\home\\surveytech\\week9\\Rocket-Elevators_RestApi\\BuildingApi.csproj": {}
+    "/home/surveytech/week9/Rocket-Elevators_RestApi/BuildingApi.csproj": {}
   },
   "projects": {
-    "\\\\wsl$\\Ubuntu-18.04\\home\\surveytech\\week9\\Rocket-Elevators_RestApi\\BuildingApi.csproj": {
+    "/home/surveytech/week9/Rocket-Elevators_RestApi/BuildingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\wsl$\\Ubuntu-18.04\\home\\surveytech\\week9\\Rocket-Elevators_RestApi\\BuildingApi.csproj",
+        "projectUniqueName": "/home/surveytech/week9/Rocket-Elevators_RestApi/BuildingApi.csproj",
         "projectName": "BuildingApi",
-        "projectPath": "\\\\wsl$\\Ubuntu-18.04\\home\\surveytech\\week9\\Rocket-Elevators_RestApi\\BuildingApi.csproj",
-        "packagesPath": "C:\\Users\\teamb\\.nuget\\packages\\",
-        "outputPath": "\\\\wsl$\\Ubuntu-18.04\\home\\surveytech\\week9\\Rocket-Elevators_RestApi\\obj\\",
+        "projectPath": "/home/surveytech/week9/Rocket-Elevators_RestApi/BuildingApi.csproj",
+        "packagesPath": "/home/surveytech/.nuget/packages/",
+        "outputPath": "/home/surveytech/week9/Rocket-Elevators_RestApi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\teamb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/surveytech/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -104,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
