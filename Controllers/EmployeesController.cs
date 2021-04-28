@@ -22,7 +22,7 @@ namespace BuildingApi.Controllers
         }
 
         //Action that gives the list of all customer
-        // GET: api/employees
+        // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employees>>> GetEmployee()
         {
@@ -30,13 +30,13 @@ namespace BuildingApi.Controllers
         }
 
          // Action that recuperates a given employee
-        // GET: api/employee/id
+        // GET: api/Employees/Email
         [HttpGet("{Email}")]
-        public async Task<ActionResult<List<Employees>>> GetEmployeebyEmail(string logEmail)
+        public async Task<ActionResult<List<Employees>>> GetEmployeesbyEmail(string Email)
         {
-            var employee = await _context.Employees.Where(e => e.Email == logEmail).ToListAsync();
+            var employee = await _context.Employees.Where(c => c.Email == Email).ToListAsync();
 
-            if (!EmployeeExists(logEmail))
+            if (!EmployeeExists(Email))
             {
                 return BadRequest();
             }
@@ -45,9 +45,9 @@ namespace BuildingApi.Controllers
         }
       
 
-        private bool EmployeeExists(string logEmail)
+        private bool EmployeeExists(string Email)
         {
-            return _context.Employees.Any(e => e.Email == logEmail);
+            return _context.Employees.Any(c => c.Email == Email);
         }
      }
 }
